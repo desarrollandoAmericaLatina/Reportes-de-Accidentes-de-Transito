@@ -1,0 +1,11 @@
+Instruccciones para la instalacion
+
+* Modifiar el archivo settings.py para las direcciones de las carpetas de templates y los datos de la bases de datos a ser utilizados.
+* Ejecutar syncdb y loadfixture para el archivo accidente_fixture.json que contiene la informacion a ser cargada.
+
+
+Consultas y sugerencias:
+
+Horacio Zamora <zamora.horacio@gmail.com>
+Sergio Garcia Spaolonzi <serge@cobalys.com>
+Silvia Sánchez <lailahfsf@gmail.com>
