@@ -1,0 +1,478 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: arial, verdana;
+    font-size: 15px;
+    vertical-align: top;
+    border-style: none;
+    border-width: 0px;
+}
+
+body {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+#login-form-submit {
+    font-size: 16px;
+    height: 40px;
+    width: 129px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+*.button {
+    font-size: 13px;
+    background-color: #ccc;
+    border-color: #DDDDDD #AAAAAA #AAAAAA #DDDDDD;
+    border-style: solid;
+    border-width: 1px;
+    color: #555;
+    padding: 9px 15px;
+    -moz-box-shadow: 0 1px 3px #777;
+    -webkit-box-shadow: 0 1px 3px #777;
+    cursor: default;
+}
+
+label {
+    color: #555;
+	cursor: pointer;
+}
+
+#list-admin-create {
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+*.button:hover {
+    -moz-box-shadow: 0 1px 6px #333;
+    -webkit-box-shadow: 0 1px 6px #333;
+}
+
+input:hover, textarea:hover {
+    -moz-box-shadow: 0 1px 3px #ccc;
+    -webkit-box-shadow: 0 1px 3px #ccc;
+}
+
+input:focus, textarea:focus {
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+img.logo {
+    margin: 10px;
+}
+
+input[type =
+"text"], input[type = "password"], textarea {
+    border: 1px solid #999;
+    padding: 2px;
+    background-color: #FAFAFA;
+}
+
+#main {
+    width: 100%;
+    height: 505px;
+    padding: 0px;
+    margin: 0px;
+    margin: auto;
+}
+
+table.password-change-form input[type = "password"]{
+ 	width: 290px;
+}
+
+
+#header {
+    height: 115px;
+    width: 100%;
+    background-color: #555;
+}
+
+#header-top-left {
+    width: 503px;
+    background-image: url('../images/background-top-left.jpg');
+    background-position: top;
+}
+
+#header-top-right {
+    background-image: url('../images/background-top.jpg');
+    background-position: top;
+    color: #EEEEEE;
+    padding-right: 45px;
+    padding-top: 6px;
+    text-align: right;
+}
+
+#header-top-right a{
+    color: #EEEEEE;
+}
+
+
+#header-inner {
+    width: 100%;
+    margin: auto;
+}
+
+#center-main {
+    vertical-align: top;
+    padding-top: 20px;
+}
+
+#sidebar {
+    padding-top: 40px;
+    width: 210px;
+    text-align: center;
+}
+
+#sidebar td {
+    padding: 8px;
+    border-top: 1px solid #808f96;
+}
+
+#sidebar a {
+    color: #dfdfdf;
+}
+
+#sidebar td:hover {
+    background-color: #fff;
+    color: #222;
+    text-decoration: none;
+}
+
+#sidebar td:hover a {
+    text-decoration: none;
+}
+
+#sidebar a:hover {
+    
+    text-decoration: none;
+}
+
+#sidebar-border-bottom {
+    border-bottom: 1px solid #808f96;
+}
+
+td.footer {
+    vertical-align:bottom;
+	padding-bottom:10px;
+}
+
+div.footer {
+    text-align: center;
+	color:#555;
+}
+
+div.footer *{
+	color:#555555;
+}
+
+#sidebar-menu {
+    vertical-align: top;
+    width: 220px;
+    background-color: #a1afb2;
+    font-size: 14px;
+    background-image: url('../images/background-left.jpg');
+}
+
+#sidebar-menu-top {
+    background-image: url('../images/background-left-top.jpg');
+    height: 571px;
+	margin:0px;
+	padding:0px;
+}
+
+SPAN.tagMatches {
+    margin-left: 10px;
+}
+
+SPAN.tagMatches SPAN {
+    padding: 2px;
+    margin-right: 4px;
+    background-color: #0000AB;
+    color: #fff;
+    cursor: pointer;
+}
+
+table.list-admin {
+    width: 650px;
+    border: 0px solid #777;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+td.list-admin-title {
+    text-align: center;
+    background-color: #777;
+    border: 1px solid #777;
+    color: #eee;
+}
+
+table.list-admin td {
+    padding: 4px;
+}
+
+td.list-admin-align-center {
+    text-align: center;
+}
+
+td.list-admin-border-left {
+    border-left: 1px solid #777;
+}
+
+td.list-admin-border-right {
+    border-right: 1px solid #777;
+}
+
+td.list-admin-border-bottom {
+    border-bottom: 1px solid #777;
+}
+
+td.list-admin-border-top {
+    border-top: 1px solid #777;
+}
+
+td.list-admin-actions {
+    width: 72px;
+}
+
+td.list-admin-pagination {
+    height: 30px;
+    vertical-align: middle;
+    text-align: center;
+    background-color: #777;
+    border: 1px solid #777;
+    color: #eee;
+}
+
+tr.list-admin-row {
+}
+
+tr.list-admin-evenrow {
+    background-color: #f0f0f0;
+}
+
+table.admin-form {
+    margin: auto;
+	margin-top:40px;
+    width: 630px;
+}
+
+table.admin-form td {
+    padding: 2px;
+}
+
+table.admin-form input, textarea {
+    width: 396px;
+}
+
+span.pagination, div.pagination, span.pagination-selected {
+    font-size: 13px;
+    color: #aaa;
+}
+
+a.pagination{
+    font-size: 13px;
+    color: #eee;
+}
+
+
+*.list-admin-action {
+    color: #445588;
+}
+
+#admin-form-submit {
+    width: 100px;
+    text-align: center;
+}
+
+td.center {
+    text-align: center;
+}
+
+#login-table {
+    width: 440px;
+    height: 200px;
+    padding: 40px;
+    border: 1px solid #ccc;
+    margin: auto;
+    -moz-box-shadow: 0 1px 31px #aaa;
+    -webkit-box-shadow: 0 1px 31px #aaa;
+}
+
+#login-table td {
+    padding: 5px;
+    vertical-align: middle;
+}
+
+#login-table input[type =
+"text"], #login-table input[type = "password"] {
+    background-color: #FAFAFA;
+    font-size: 20px;
+    height: 25px;
+    padding: 5px;
+    width: 260px;
+}
+
+#login-table label {
+    font-size: 22px;
+}
+
+table.delete-form {
+    margin-top: 100px;
+}
+
+#delete-form-message{
+	color: #555555;
+    font-size: 21px;
+    padding: 20px;	
+	text-align:center;
+}
+    
+#delete-form-submit{
+	    margin: auto;
+    width: 120px;	
+}
+
+/* Messages */ 
+*.warning {
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    background-color: #FFFFCC;
+    width: 380px;
+    border: 1px solid #BF3030;
+    padding: 20px;
+    font-size: 13px;
+}
+
+*.success{	
+  background-color: #FFFFCC;
+  border: 1px solid #FFAD33;
+  width: 431px;  	
+  margin: auto;
+  margin-top:30px;
+  margin-bottom:30px;
+  text-align: center;
+  padding:20px;
+  font-size:13px;
+}
+
+*.success *{
+	font-size: 13px;
+	color:	#000000;
+}
+
+*.info{
+  background-color: #FFFFCC;
+  border: 1px solid #FFAD33;
+  width: 431px;  	
+  margin: auto;
+  margin-top:30px;
+  margin-bottom:30px;
+  text-align: center;
+  padding:20px;
+  font-size:13px;
+}
+
+*.error {
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    background-color: #FFFFCC;
+    width: 380px;
+    border: 1px solid #BF3030;
+    padding: 20px;
+    font-size: 13px;
+}
+
+div *.errorlist {
+    list-style: none;
+    font-size: 13px;
+}
+*.errorlist, *.errorlist > li {
+    color: #BF3030;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    margin: 0 0 0 8px;
+    padding: 0;
+    text-align: left;
+}
+
+/* End Messages */
+#headline{
+font-size: 21px; margin-left: 91px; color: rgb(119, 119, 119);	
+}
+
+*.pending{
+	color:#ccc;
+}
+
+*.processing{
+	color:#aaa;	
+}
+
+*.processed{
+	color:green;
+}
+
+*.error{
+	color:red;
+}
+
+.upload-button{
+	position: relative; 
+	overflow: hidden;
+	direction: ltr;
+	width: 110px;
+	padding: 6px;
+	text-align: center;
+	background-color: #bbb;
+	border: 1px solid rgb(170, 170, 170);
+	color: rgb(85, 85, 85);
+	font-size: 11px;
+	font-family: sans-serif;
+}
+
+div.upload-button:hover{
+	background-color: #ddd;
+}
+
+.file-input{
+	position: absolute;
+	right: 0pt;
+	top: 0pt;
+	z-index: 1; 
+	margin: 0pt;
+	padding: 0pt;
+	opacity: 0;
+	filter: alpha(opacity = 0);
+	font-size: 20px;
+	width:396px;
+}
+
+.file-info{
+	color:#009e33;
+	margin-left: 10px;
+	font-family: sans-serif;
+	font-size: 13px;
+}
+
+.tag-form-label{
+	vertical-align: middle;	
+	text-align:right;
+	width: 125px;
+}
+
+
+#about-us, #ranking-modal{
+	display:none;
+}

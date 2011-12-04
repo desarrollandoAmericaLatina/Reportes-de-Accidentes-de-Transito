@@ -1,0 +1,5 @@
+[
+    {% for accidente in accidentes %}
+      ['{{ accidente.tipo }}', {{ accidente.latititud }}, {{ accidente.longitude }}],
+    {% endfor %}
+];
