@@ -12,19 +12,20 @@ def index(request):
 
 
 def get_top(request):
-    YEAR = (
-                       ('2006', 2006),
-                       ('2007', 2007),
-                       ('2008', 2008),
-                       ('2008', 2009),
-                       ('2010', 2010),
-    )
 
-    TIPO = (
-                       ('1', 'FATAL'),
-                       ('2', 'GRAVE'),
-                       ('3', 'LEVE'),
-    )
+    YEAR = {
+                       '2006': 2006,
+                       '2007': 2007,
+                       '2008': 2008,
+                       '2009': 2009,
+                       '2010': 2010,
+    }
+
+    TIPO = {
+                       '1': 'FATAL',
+                       '2': 'GRAVE',
+                       '3': 'LEVE',
+    }
 
 
     from django.db import connection, transaction
@@ -37,25 +38,45 @@ def get_top(request):
     tipo = request.GET.get('tipofilter', None)
     year = request.GET.get('yearfilter', None)
 
-    if year not in YEAR:
+    print "tipo " + str(tipo)
+    print "year " + str(year)
+    print "cantidad " + str(cantidad)
+	
+    
+    tipo = str(tipo)
+    year = str(year)
+
+
+    if not YEAR.has_key(year):
 	year = None
 
-    if tipo not in TIPO:
-	tipo = None
+     
+
+    if not TIPO.has_key(tipo):
+	   tipo = None
+    else:
+	   tipo = TIPO[tipo]
+
+    print "!!!!!!!!!!!!!!!!!!!"
+
+
+    print "tipo " + str(tipo)
+    print "year " + str(year)
+    print "cantidad " + str(cantidad)
 
     if tipo is not None:
 	    if year is not None:
-		cursor.execute("select nombre_calle, nombre_cruce, count(*) as cantidad, year, latititud, longitude from accidentes_accidente group by calle, cruce where year = %s and tipo = %s having cantidad > %s order by year desc, cantidad desc;", [year, tipo, cantidad])
+		cursor.execute("select nombre_calle, nombre_cruce, count(*) as cantidad, year, latititud, longitude from accidentes_accidente where year = %s and tipo = %s group by calle, cruce having cantidad >= %s order by year desc, cantidad desc;", [year, tipo, cantidad])
 		rows = cursor.fetchall()
 	    else:
-		cursor.execute("select nombre_calle, nombre_cruce, count(*) as cantidad, year, latititud, longitude from accidentes_accidente group by calle, cruce where tipo = %s having cantidad > %s order by year desc, cantidad desc;", [cantidad, tipo])
+		cursor.execute("select nombre_calle, nombre_cruce, count(*) as cantidad, year, latititud, longitude from accidentes_accidente where tipo = %s group by calle, cruce having cantidad >= %s order by year desc, cantidad desc;", [tipo, cantidad])
 		rows = cursor.fetchall()
     else:
 	    if year is not None:
-		cursor.execute("select nombre_calle, nombre_cruce, count(*) as cantidad, year, latititud, longitude from accidentes_accidente group by calle, cruce where year = %s having cantidad > %s order by year desc, cantidad desc;", [year,cantidad])
+		cursor.execute("select nombre_calle, nombre_cruce, count(*) as cantidad, year, latititud, longitude from accidentes_accidente where year = %s group by calle, cruce having cantidad >= %s order by year desc, cantidad desc;", [year,cantidad])
 		rows = cursor.fetchall()
 	    else:
-		cursor.execute("select nombre_calle, nombre_cruce, count(*) as cantidad, year, latititud, longitude from accidentes_accidente group by calle, cruce having cantidad > %s order by year desc, cantidad desc;", [cantidad,])
+		cursor.execute("select nombre_calle, nombre_cruce, count(*) as cantidad, year, latititud, longitude from accidentes_accidente group by calle, cruce having cantidad >= %s order by year desc, cantidad desc;", [cantidad,])
 		rows = cursor.fetchall()	
 
 
@@ -76,7 +97,7 @@ def about(request):
 def top(request):
 	from django.db import connection, transaction
 	cursor = connection.cursor()
-	cursor.execute("select nombre_calle, calle, nombre_cruce, cruce, count(*) as cantidad, longitude, latititud from accidentes_accidente group by calle, cruce order by cantidad desc limit 20;")
+	cursor.execute("select nombre_calle, nombre_cruce, count(*) as cantidad, longitude, latititud from accidentes_accidente group by calle, cruce order by cantidad desc limit 20;")
 	rows = cursor.fetchall()
 	variables = dict()
 	variables['rows'] = rows

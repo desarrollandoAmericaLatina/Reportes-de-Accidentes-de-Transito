@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title>Reporte de accidentes de Transito en Montevideo</title>
+        <title>Reporte de accidentes de tránsito en Montevideo</title>
         <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery-1.6.1.min.js"></script>
         <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery-ui-1.8.13.custom.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/ui.spinner.css" />
@@ -122,7 +122,7 @@
 		}
 
 		function actualizar(){
-		    var parameters = {};   
+				    var parameters = {};   
 		    if(parseInt($('#minaccidentnum').val()) > 0){
 		      parameters["cantidad"] = $('#minaccidentnum').val();
 		    }else{
@@ -130,15 +130,11 @@
 			$('#minaccidentnum').val(40);
                     }
 
-		    if(parseInt($('#yearfilter').val()) > 0){
-		       parameters["yearfilter"] = $('#year').val();
-		    }else{
-			parameters["yearfilter"] = 'todo';
-			$('#yearfilter').val('todo');
-                    }
+		    parameters["yearfilter"] = $('#yearfilter').val();
+
 
 		    if(parseInt($('#tipofilter').val()) > 0){
-		       parameters["tipo"] = $('#tipofilter').val();
+		       parameters["tipofilter"] = $('#tipofilter').val();
 		    }else{
 			parameters["tipofilter"] = 'todo'
 			$('#tipofilter').val('todo')
@@ -181,7 +177,7 @@
 
 
 		$(document).ready(function($) {
-			$("#minaccidentnum").spinner({min: 0, max: 500, increment: 2});
+			$("#minaccidentnum").spinner({min: 1, max: 500, increment: 2});
 		});
 		function getRanking(){
 		var output = "<table>"
@@ -204,18 +200,18 @@
     </head>
     <body onload="initialize()">
 	<div id="about-us" title="Acerca de">
-		<p style="margin-top:20px;">Este progra ha sido desarrollado para el seguimiento de los accidentes de transito con lesionados en Montevideo mediante una representacion en un mapa interactivo de los puntos donde ocurrieron. El mismo permite determinar cuales son los puntos de Montevideo donde occurrieron mas accidentes viales, lo cual ayudara a las autoridades en la identificacion de posibles problemas en la planificacion urbana y seguridad vial.</p>
+		<p style="margin-top:20px;">Esta aplicación web ha sido desarrollado para el seguimiento de los accidentes de tránsito con lesionados en Montevideo mediante una representación en un mapa interactivo de los puntos donde ocurrieron. El mismo permite determinar cuáles son los puntos de Montevideo donde occurrieron más accidentes viales, lo cual ayudará a las autoridades en la identificación de posibles problemas en la planificación urbana y seguridad vial.</p>
 <p style="margin-top:10px;">
-Este programa utiliza datos abiertos liberados por la Intendencia de Montevideo, Dependencia responsable Geomática, la cual utilizo informacion suministrada por la Oficina Centralizadora de Información Táctica (OCIT) de la Jefatura de Policia de Montevido.
+Este programa utiliza datos abiertos liberados por la Intendencia de Montevideo, Dependencia responsable Geomática.
 </p>
 <p style="margin-top:10px;">
-La informacion representada en este programa pertenece a los Accidentes de Transito con lesionados ocurridos en el Departamento de Montevideo en el período 2006 - 2010.
+La información representada en este programa pertenece a los accidentes de tránsito con lesionados ocurridos en el Departamento de Montevideo en el período 2006 - 2010.
 </p>
 <p style="margin-top:10px;">
-Archivos Shapefile con la informacion utilizada esta disponibles en: http://www.montevideo.gub.uy/datos/18664
+Archivos Shapefile con la informacion utilizada están disponibles en: http://www.montevideo.gub.uy/datos/18664
 </p>
 	</div>
-	<div id="ranking-modal" title="Puntos mas peligrosos">
+	<div id="ranking-modal" title="Los 20 lugares mas peligrosos">
 <table style="margin-top:10px;font-family: Arial; font-size: 13px; font-weight: bold; color: #fefefe; background-color:  #888; border-top: 1px solid  #888; border-right: 1px solid  #888; border-left: 1px solid  #888; width: 627px;">
 	<tr>
 		<td style="width:181px;text-align:center;">Calle</td>
@@ -236,7 +232,7 @@ Archivos Shapefile con la informacion utilizada esta disponibles en: http://www.
                 </td>
                 <td id="header-top-right" align="center">
 			<h2><a href="#" onclick="showAboutUs();" style="float:right;margin-left:6px;margin-right:5px;">Acerca de</a></h2>
-			<h2><a href="#" onclick="ranking();" style="float:right;padding-right:6px;border-right:1px solid #eee;">Esquinas mas peligrosas</a></h2>
+			<h2><a href="#" onclick="ranking();" style="float:right;padding-right:6px;border-right:1px solid #eee;">Puntos más peligrosos</a></h2>
                 </td>
             </tr>
         </table>
@@ -247,7 +243,7 @@ Archivos Shapefile con la informacion utilizada esta disponibles en: http://www.
 		       			<table style="margin: 20px auto auto; border: 1px solid rgb(170, 170, 170); background-color: rgb(254, 254, 254); width: 190px; padding: 9px;">
 			       			<tr>
 				       			<td style="border: medium none; color: rgb(68, 68, 68); font-weight: bold;">
-							 Periodo
+							 Período
 				       			</td>
 						</tr>
 						<tr>
@@ -269,17 +265,17 @@ Archivos Shapefile con la informacion utilizada esta disponibles en: http://www.
 						</tr>
 						<tr>
 				       			<td style="border:none;text-align: center;">
-							 <select id="tipofilter" style="text-align: right;background-color:#FAFAFA; font-size: 12px; padding: 2px; border: 1px solid rgb(204, 204, 204); height: 23px; width: 140px; font-weight: bold;">
+							 <select id="tipofilter" style="text-align: right;background-color:#FAFAFA; font-size: 12px; padding: 2px; border: 1px solid rgb(204, 204, 204); height: 23px; width: 140px; font-weight: bold;padding-right:3px;">
 							  <option style="text-align:right;" value="todo">Todos</option>
-							  <option style="text-align:right;" value="1">Leve</option>
+							  <option style="text-align:right;" value="3">Leve</option>
 							  <option style="text-align:right;" value="2">Grave</option>
-							  <option style="text-align:right;" value="3">Fatal</option>
+							  <option style="text-align:right;" value="1">Fatal</option>
 							</select>
 				       			</td>
 						</tr>
 						<tr>
 				       			<td style="border: medium none; color: rgb(68, 68, 68); font-weight: bold; padding-top: 15px;">
-							  Puntos con mayor numero de accidentes
+							  Numero de reiteración de accidentes
 				       			</td>
 						</tr>
 						<tr>
