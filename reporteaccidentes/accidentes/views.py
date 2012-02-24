@@ -1,9 +1,29 @@
 # -*- coding: utf-8 -*-
+
+#    <one line to give the program's name and a brief idea of what it does.>
+#    Copyright (C) <year>  <name of author>
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU Affero General Public License as
+#    published by the Free Software Foundation, either version 3 of the
+#    License, or (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU Affero General Public License for more details.
+#
+#    You should have received a copy of the GNU Affero General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+from django.db import connection, transaction
 from django.http import HttpResponse
 from django.template import RequestContext
 from django.template.loader import get_template
 from reporteaccidentes.accidentes.models import Accidente
-
+    
+    
 def index(request):
     variables = dict()
     t = get_template('index.html')
@@ -27,42 +47,23 @@ def get_top(request):
                        '3': 'LEVE',
     }
 
-
-    from django.db import connection, transaction
     cursor = connection.cursor()
-    year = None
-    cantidad = None
-    tipo = None
 
     cantidad = request.GET.get('cantidad', 15)
     tipo = request.GET.get('tipofilter', None)
     year = request.GET.get('yearfilter', None)
-
-    print "tipo " + str(tipo)
-    print "year " + str(year)
-    print "cantidad " + str(cantidad)
 	
-    
     tipo = str(tipo)
     year = str(year)
-
-
+    
     if not YEAR.has_key(year):
-	year = None
-
-     
+        year = None    
 
     if not TIPO.has_key(tipo):
 	   tipo = None
     else:
 	   tipo = TIPO[tipo]
 
-    print "!!!!!!!!!!!!!!!!!!!"
-
-
-    print "tipo " + str(tipo)
-    print "year " + str(year)
-    print "cantidad " + str(cantidad)
 
     if tipo is not None:
 	    if year is not None:
@@ -73,16 +74,16 @@ def get_top(request):
 		rows = cursor.fetchall()
     else:
 	    if year is not None:
-		cursor.execute("select nombre_calle, nombre_cruce, count(*) as cantidad, year, latititud, longitude from accidentes_accidente where year = %s group by calle, cruce having cantidad >= %s order by year desc, cantidad desc;", [year,cantidad])
+		cursor.execute("select nombre_calle, nombre_cruce, count(*) as cantidad, year, latititud, longitude from accidentes_accidente where year = %s group by calle, cruce having cantidad >= %s order by year desc, cantidad desc;", [year, cantidad])
 		rows = cursor.fetchall()
 	    else:
-		cursor.execute("select nombre_calle, nombre_cruce, count(*) as cantidad, year, latititud, longitude from accidentes_accidente group by calle, cruce having cantidad >= %s order by year desc, cantidad desc;", [cantidad,])
+		cursor.execute("select nombre_calle, nombre_cruce, count(*) as cantidad, year, latititud, longitude from accidentes_accidente group by calle, cruce having cantidad >= %s order by year desc, cantidad desc;", [cantidad, ])
 		rows = cursor.fetchall()	
 
 
     output = "["
     for row in rows:
-		output += "['Aqui hubo " + unicode(row[2]) + " Accidentes.', " +  unicode(row[4])  + ", " +  unicode(row[5])  + "],"
+		output += "['Aqui hubo " + unicode(row[2]) + " Accidentes.', " + unicode(row[4]) + ", " + unicode(row[5]) + "],"
     output += "];"
     return HttpResponse(output)
 
