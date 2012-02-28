@@ -5,32 +5,46 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>Reporte de accidentes de tránsito en Montevideo</title>
 		<script type="text/javascript">
-			var image = '{{ MEDIA_URL }}images/icons/fatal.png';
+			var image = '{{ STATIC_URL }}images/icons/fatal.png';
 		</script>
-		<script type="text/javascript" src="{{ MEDIA_URL }}js/jquery-1.6.1.min.js"></script>
-		<script type="text/javascript" src="{{ MEDIA_URL }}js/jquery-ui-1.8.13.custom.min.js"></script>
-		<script type="text/javascript" src="{{ MEDIA_URL }}js/public.js"></script>
-		<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/ui.spinner.css" />
-		<script type="text/javascript" src="{{ MEDIA_URL }}js/ui.spinner.js"></script>
-		<link type="text/css" href="{{ MEDIA_URL }}css/jquery-ui-1.8.14.custom.css" rel="Stylesheet" />
-		<link rel="stylesheet" type="text/css" href= "{{ MEDIA_URL }}css/style.css"/>
-		<link type="text/css" href="{{ MEDIA_URL }}css/jquery-ui-1.8.14.custom.css" rel="Stylesheet" />
+		<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.6.1.min.js"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-1.8.13.custom.min.js"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}js/public.js"></script>
+		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/ui.spinner.css" />
+		<script type="text/javascript" src="{{ STATIC_URL }}js/ui.spinner.js"></script>
+		<link type="text/css" href="{{ STATIC_URL }}css/jquery-ui-1.8.14.custom.css" rel="Stylesheet" />
+		<link rel="stylesheet" type="text/css" href= "{{ STATIC_URL }}css/style.css"/>
+		<link type="text/css" href="{{ STATIC_URL }}css/jquery-ui-1.8.14.custom.css" rel="Stylesheet" />
 		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
 	</head>
 	<body onload="initialize()">
 		<div id="about-us" title="Acerca de">
+			<h2>Reporte de accidentes de tránsito en Montevideo</h2>
 			<p style="margin-top:20px;">
-				Esta aplicación web ha sido desarrollado para el seguimiento de los accidentes de tránsito con lesionados en Montevideo mediante una representación en un mapa interactivo de los puntos donde ocurrieron. El mismo permite determinar cuáles son los puntos de Montevideo donde occurrieron más accidentes viales, lo cual ayudará a las autoridades en la identificación de posibles problemas en la planificación urbana y seguridad vial.
-			</p>
-			<p style="margin-top:10px;">
-				Este programa utiliza datos abiertos liberados por la Intendencia de Montevideo, Dependencia responsable Geomática.
-			</p>
-			<p style="margin-top:10px;">
-				La información representada en este programa pertenece a los accidentes de tránsito con lesionados ocurridos en el Departamento de Montevideo en el período 2006 - 2010.
-			</p>
-			<p style="margin-top:10px;">
-				Archivos Shapefile con la informacion utilizada están disponibles en: http://www.montevideo.gub.uy/datos/18664
-			</p>
+El proposito de esta aplicacion es el analisis de los accidentes de trancito en montevideo identificando los puntos de mayor frecuancia de accidentes.
+</p>
+<p style="margin-top:20px;">
+La informacion fue obtenida de datos abirtos liberados por la Intendencia de Montevideo, Dependencia responsable Geomática. Para el estudio se utilizaron datos de todos los accidentes de trancito con lesionados por el periodo del 2006-2010. 
+</p>
+<p style="margin-top:20px;">
+Esta aplicaccion fue desarrollada en el entorno del hackaton Desarrollando América Latina y obtuvo el segundo premio en el evento por Uruguay.
+El codigo fuente esta disponible bajo la licencia GNU AFFERO GENERAL PUBLIC LICENSE.
+</p>
+
+<p style="margin-top:20px;font-weight: bold;">Miembros del equipo:</p>
+<p><a href="mailto:lailahfsf@gmail.com">Silvia Sánchez &lt;lailahfsf@gmail.com&gt;</a></p>
+<p><a href="mailto:zamora.horacio@gmail.com">Horacio Zamora &lt;zamora.horacio@gmail.com&gt;</a></p>
+<p><a href="mailto:serge@cobalys.com">Sergio Garcia Spaolonzi &lt;serge@cobalys.com&gt;</a></p>
+
+<p style="margin-top:20px;font-weight: bold;">Links:</p>
+<p>Datos Libres IMM:</p>
+<a style="font-size:10px;" href="http://www.montevideo.gub.uy/institucional/datos-abiertos">http://www.montevideo.gub.uy/institucional/datos-abiertos</a></p>
+<p>Desarrollando América Latina:</p>
+<a style="font-size:10px;" href="http://desarrollandoamerica.org/">http://desarrollandoamerica.org/</a></p>
+<p>Descarga del Software:</p>
+<a style="font-size:10px;" href="https://github.com/desarrollandoAmericaLatina/Reportes-de-Accidentes-de-Transito">https://github.com/desarrollandoAmericaLatina/Reportes-de-Accidentes-de-Transito</a></p>
+
+			
 		</div>
 		<div id="ranking-modal" title="Los 20 lugares mas peligrosos">
 			<table style="margin-top:10px;font-family: Arial; font-size: 13px; font-weight: bold; color: #fefefe; background-color:  #888; border-top: 1px solid  #888; border-right: 1px solid  #888; border-left: 1px solid  #888; width: 627px;">
@@ -98,6 +112,11 @@
 					<table id="sidebar" cellpadding="0" cellspacing="0" style="width:159px;margin:auto;" align="center">
 						<tr>
 							<td style="border:1px solid #ddd;background-color:orange;color:#fff;"><h2><a style="color:#fff;" href="#" onclick="ranking();">Esquinas mas peligrosas</a></h2></td>
+						</tr>
+					</table>
+					<table id="hosted-by" cellpadding="0" cellspacing="0" style="width:159px;margin:auto;margin-top:30px;" align="center">
+						<tr>
+							<td><a href="http://www.cobalys.com" ><img src="{{ STATIC_URL }}/images/cobalys.png" /></a></td>
 						</tr>
 					</table>
 				</div></td>

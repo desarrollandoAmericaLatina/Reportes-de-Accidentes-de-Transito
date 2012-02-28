@@ -1,11 +1,20 @@
-Instruccciones para la instalacion
+Reporte de accidentes de tránsito en Montevideo
+-----------------------------------------------
 
-* Modifiar el archivo settings.py para las direcciones de las carpetas de templates y los datos de la bases de datos a ser utilizados.
-* Ejecutar syncdb y loadfixture para el archivo accidente_fixture.json que contiene la informacion a ser cargada.
+El proposito de esta aplicacion es el analisis de los accidentes de trancito en montevideo identificando los puntos de mayor frecuancia de accidentes.
 
+La informacion fue obtenida de datos abirtos liberados por la Intendencia de Montevideo, Dependencia responsable Geomática. Para el estudio se utilizaron datos de todos los accidentes de trancito con lesionados por el periodo del 2006-2010. 
 
-Consultas y sugerencias:
+Esta aplicaccion fue desarrollada en el entorno del hackaton Desarrollando América Latina y obtuvo el segundo premio en el evento por Uruguay.
+El codigo fuente esta disponible bajo la licencia GNU AFFERO GENERAL PUBLIC LICENSE.
 
+Miembros del equipo:
+Silvia Sánchez <lailahfsf@gmail.com>
 Horacio Zamora <zamora.horacio@gmail.com>
 Sergio Garcia Spaolonzi <serge@cobalys.com>
-Silvia Sánchez <lailahfsf@gmail.com>
+
+Links:
+Datos Libres IMM: http://www.montevideo.gub.uy/institucional/datos-abiertos
+Desarrollando América Latina: http://desarrollandoamerica.org/ 
+Descarga del Software: https://github.com/desarrollandoAmericaLatina/Reportes-de-Accidentes-de-Transito
+
