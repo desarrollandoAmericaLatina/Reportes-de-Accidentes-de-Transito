@@ -1,12 +1,12 @@
 Reporte de accidentes de tránsito en Montevideo
 -----------------------------------------------
 
-El proposito de esta aplicacion es el analisis de los accidentes de trancito en montevideo identificando los puntos de mayor frecuancia de accidentes.
+El propósito de esta aplicación es el análisis de los accidentes de tránsito en Montevideo (ciudad, capital) identificando los puntos de mayor frecuancia de accidentes.
 
-La informacion fue obtenida de datos abirtos liberados por la Intendencia de Montevideo, Dependencia responsable Geomática. Para el estudio se utilizaron datos de todos los accidentes de trancito con lesionados por el periodo del 2006-2010. 
+La información fue obtenida de datos abirtos liberados por la Intendencia de Montevideo, Dependencia responsable Geomática. Para el estudio se utilizaron datos de todos los accidentes de tránsito con lesionados por el período del 2006-2010. 
 
-Esta aplicaccion fue desarrollada en el entorno del hackaton Desarrollando América Latina y obtuvo el segundo premio en el evento por Uruguay.
-El codigo fuente esta disponible bajo la licencia GNU AFFERO GENERAL PUBLIC LICENSE.
+Esta aplicación fue desarrollada en el entorno de la hackaton Desarrollando América Latina y obtuvo el segundo premio en el evento representando a Uruguay.
+El código fuente está disponible bajo la licencia GNU GENERAL PUBLIC LICENSE v2.
 
 Miembros del equipo:
 Silvia Sánchez <lailahfsf@gmail.com>
@@ -14,7 +14,7 @@ Horacio Zamora <zamora.horacio@gmail.com>
 Sergio Garcia Spaolonzi <serge@cobalys.com>
 
 Links:
-Datos Libres IMM: http://www.montevideo.gub.uy/institucional/datos-abiertos
+Datos Libres IMM: http://www.montevideo.gub.uy/institucional/datos-abiertos (deprecated)
 Desarrollando América Latina: http://desarrollandoamerica.org/ 
-Descarga del Software: https://github.com/desarrollandoAmericaLatina/Reportes-de-Accidentes-de-Transito
+Descarga del Software: https://github.com/desarrollandoAmericaLatina/Reportes-de-Accidentes-de-Transito (under construction & refurbishment)
 
